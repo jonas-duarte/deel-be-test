@@ -1,24 +1,15 @@
-import { BestProfessionsReportUseCase } from './domain/use-cases/best-profession-report';
-import { BestClientsReportUseCase } from "./domain/use-cases/best-clients-report";
-import { BalanceDepositUseCase } from "./domain/use-cases/balance-deposit";
-import { PayForAJobUseCase } from "./domain/use-cases/pay-for-a-job";
 import express from "express";
 import bodyParser from "body-parser";
-import { SequelizeCollectionFactory } from "./infrastructure/sequelize-collection/factory";
-import { ContractModel, JobModel, ProfileModel } from "./domain/entitities";
 
-const contractCollection = SequelizeCollectionFactory.make("contract");
-const jobCollection = SequelizeCollectionFactory.make("job");
-const profileCollection = SequelizeCollectionFactory.make("profile");
-
-const contractModel = new ContractModel(contractCollection);
-const profileModel = new ProfileModel(profileCollection);
-const jobModel = new JobModel(jobCollection, contractModel);
-
-const payForAJobUseCase = new PayForAJobUseCase(contractModel, profileModel, jobModel);
-const balanceDepositUseCase = new BalanceDepositUseCase(profileModel, jobModel);
-const bestProfessionsReportUseCase = new BestProfessionsReportUseCase(jobModel, contractCollection, profileCollection);
-const bestClientsReportUseCase = new BestClientsReportUseCase(jobModel, contractCollection, profileCollection);
+import {
+  profileModel,
+  contractModel,
+  jobModel,
+  payForAJobUseCase,
+  balanceDepositUseCase,
+  bestProfessionsReportUseCase,
+  bestClientsReportUseCase,
+} from "./app-setup";
 
 const app = express();
 app.use(bodyParser.json());
