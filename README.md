@@ -123,7 +123,7 @@ When you have finished the assignment, create a github repository and send us th
 
 Thank you and good luck! 🙏
 
-### About the test
+## About the test
 
 I used TypeScript because I believe it was easier to follow some SOLID concepts and create some contracts for dependency inversion and defining responsabilites. I also applied DDD in order to structure the folders, but I had to break it in order to do the `between` query for dates. But even though I hope you like the result and I appreciate your time to review this test 🙂
 
