@@ -131,3 +131,4 @@ I used TypeScript because I believe it was easier to follow some SOLID concepts 
 - `POST /balances/deposit/:userId` is not working properly
 - I had to skip some test scenarios due lack of time
 - Type everything properly and remove some @ts-ignore and "any"
+- Handling error properly and returns the correct HTTP status
